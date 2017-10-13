@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">GameLib</string>
     <string name="game_name_sudoku">Sudoku</string>
+    <string name="game_desc_sudoku">Résolutions de grilles 9x9</string>
+    <string name="game_name_demineur">Démineur</string>
+    <string name="game_desc_demineur">Déminez jusqu\'à 25 bombes sur une grille 10x10 !</string>
+    <string name="game_name_quizz">Quizz</string>
+    <string name="game_desc_quizz">Thème : Culture générale</string>
+    <string name="button_lib_play">Jouer</string>
+    <string name="button_lib_stats">Stats</string>
 </resources>
