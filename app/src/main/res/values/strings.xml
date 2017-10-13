@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GameLib</string>
+    <string name="game_name_sudoku">Sudoku</string>
+</resources>
