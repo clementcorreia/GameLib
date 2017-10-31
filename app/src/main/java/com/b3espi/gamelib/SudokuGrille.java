@@ -126,7 +126,8 @@ public class SudokuGrille {
         int[][] bloc = this.getBlocByIndex(index);
         ArrayList<Integer> list = new ArrayList<Integer>();
         for(int i=0; i<bloc.length; i++) {
-            for(int j : bloc[i]) list.add(j);
+            for(int j : bloc[i])
+                if(j!=0) list.add(j);
         }
         return list.contains(e);
     }

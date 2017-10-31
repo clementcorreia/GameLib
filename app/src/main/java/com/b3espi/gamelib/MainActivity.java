@@ -78,5 +78,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        final Button playPuissance4Button = (Button) findViewById(R.id.play_puissance4);
+        playPuissance4Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Puissance4Play.class);
+                startActivity(intent);
+            }
+
+        });
+
+        final Button statsPuissance4Button = (Button) findViewById(R.id.stats_puissance4);
+        statsPuissance4Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Puissance4Stats.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }

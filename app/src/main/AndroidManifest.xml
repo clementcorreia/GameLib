@@ -21,7 +21,9 @@
         <activity android:name=".QuizzPlay" />
         <activity android:name=".QuizzStats" />
         <activity android:name=".DemineurPlay" />
-        <activity android:name=".DemineurStats"></activity>
+        <activity android:name=".DemineurStats" />
+        <activity android:name=".Puissance4Play" />
+        <activity android:name=".Puissance4Stats"></activity>
     </application>
 
 </manifest>

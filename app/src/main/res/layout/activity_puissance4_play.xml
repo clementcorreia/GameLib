@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.b3espi.gamelib.Puissance4Play">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/bleuPuissance4"
+            android:padding="5dp"
+            android:weightSum="6"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableRow
+                android:id="@+id/row5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="7">
+
+                <ImageButton
+                    android:id="@+id/case50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="60dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="113dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="166dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="273dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="326dp"
+                    tools:layout_editor_absoluteY="232dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="7">
+
+                <ImageButton
+                    android:id="@+id/case40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="60dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="113dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="166dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="273dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="326dp"
+                    tools:layout_editor_absoluteY="232dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="7">
+
+                <ImageButton
+                    android:id="@+id/case30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="60dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="113dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="166dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="273dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="326dp"
+                    tools:layout_editor_absoluteY="232dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="7">
+
+                <ImageButton
+                    android:id="@+id/case20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/case21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="60dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/case22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="113dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/case23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="166dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/case24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/case25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="273dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/case26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="326dp"
+                    tools:layout_editor_absoluteY="179dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="7">
+
+                <ImageButton
+                    android:id="@+id/case10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="60dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="113dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="166dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="273dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+                <ImageButton
+                    android:id="@+id/case16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="326dp"
+                    tools:layout_editor_absoluteY="232dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:weightSum="7">
+
+                <ImageButton
+                    android:id="@+id/case00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <ImageButton
+                    android:id="@+id/case01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="60dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <ImageButton
+                    android:id="@+id/case02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="113dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <ImageButton
+                    android:id="@+id/case03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="166dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <ImageButton
+                    android:id="@+id/case04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="220dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <ImageButton
+                    android:id="@+id/case05"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="273dp"
+                    tools:layout_editor_absoluteY="287dp" />
+
+                <ImageButton
+                    android:id="@+id/case06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4_jaune"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc"
+                    tools:layout_editor_absoluteX="326dp"
+                    tools:layout_editor_absoluteY="287dp" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/switchCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
