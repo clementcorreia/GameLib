@@ -14,6 +14,8 @@ public class Puissance4Play extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puissance4_play);
 
+        Puissance4Grille jeu = new Puissance4Grille();
+
         final Button switchCaseButton = (Button) findViewById(R.id.switchCase);
         switchCaseButton.setOnClickListener(new View.OnClickListener() {
 
