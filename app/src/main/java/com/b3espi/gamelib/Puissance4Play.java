@@ -64,8 +64,26 @@ public class Puissance4Play extends AppCompatActivity {
         this.grille[5][6] = (ImageButton) findViewById(R.id.case56);
         for(int row=0; row<6; row++) {
             for(int col=0; col<7; col++) {
+                final int colIndex = col;
+                this.grille[row][col].setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        colorButton(colIndex);
+                    }
+
+                });
+                this.grille[row][col].setClickable(true);
                 this.grille[row][col].setImageResource(R.drawable.boutonblanc);
                 this.grilleValue[row][col] = -1;
+            }
+        }
+    }
+
+    public void fin() {
+        for(int row=0; row<6; row++) {
+            for(int col=0; col<7; col++) {
+                this.grille[row][col].setClickable(false);
             }
         }
     }
@@ -79,8 +97,9 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setImageResource(R.drawable.boutonrouge);
                 this.grilleValue[row][col] = 0;
                 ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
-                if(isColWin(row,col) || isRowWin(row,col)) {
+                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col)) {
                     playerButton.setImageResource(R.drawable.boutonblanc);
+                    fin();
                 }
                 else {
                     playerButton.setImageResource(R.drawable.boutonjaune);
@@ -99,8 +118,9 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setImageResource(R.drawable.boutonjaune);
                 this.grilleValue[row][col] = 1;
                 ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
-                if(isColWin(row,col) || isRowWin(row,col)) {
+                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col)) {
                     playerButton.setImageResource(R.drawable.boutonblanc);
+                    fin();
                 }
                 else {
                     playerButton.setImageResource(R.drawable.boutonrouge);
@@ -120,10 +140,9 @@ public class Puissance4Play extends AppCompatActivity {
     }
 
     public boolean isColWin(int row, int col) {
-        int value = this.grilleValue[row][col];
-        int cpt = 1;
+        int cpt = 1, value = this.grilleValue[row][col];;
         boolean ok = false, abort = false;
-        for(int rowIndex = row-1; (rowIndex>(row-4) && rowIndex >= 0 && rowIndex < 6 && !ok && !abort); rowIndex--) {
+        for(int rowIndex = row-1; (rowIndex>(row-4) && rowIndex >= 0 && !ok && !abort); rowIndex--) {
             if(this.grilleValue[rowIndex][col] == value) {
                 cpt++;
             }
@@ -137,10 +156,9 @@ public class Puissance4Play extends AppCompatActivity {
     }
 
     public boolean isRowWin(int row, int col) {
-        int value = this.grilleValue[row][col];
-        int cpt = 1;
+        int cpt = 1, value = this.grilleValue[row][col];
         boolean ok = false, abort = false;
-        for(int colIndex = col+1; (colIndex<(col+4) && colIndex >= 0 && colIndex < 7 && !ok && !abort); colIndex++) {
+        for(int colIndex = col+1; (colIndex<(col+4) && colIndex < 7 && !ok && !abort); colIndex++) {
             if(this.grilleValue[row][colIndex] == value) {
                 cpt++;
             }
@@ -151,8 +169,68 @@ public class Puissance4Play extends AppCompatActivity {
                 ok = true;
         }
         abort = false;
-        for(int colIndex = col-1; (colIndex>(col-4) && colIndex >= 0 && colIndex < 7 && !ok && !abort); colIndex--) {
+        for(int colIndex = col-1; (colIndex>(col-4) && colIndex >= 0 && !ok && !abort); colIndex--) {
             if(this.grilleValue[row][colIndex] == value) {
+                cpt++;
+            }
+            else {
+                abort = true;
+            }
+            if(cpt == 4)
+                ok = true;
+        }
+        return ok;
+    }
+
+    public boolean isDiagonaleCroissanteWin(int row, int col) {
+        int cpt = 1, rowIndex = row, value = this.grilleValue[row][col];
+        boolean ok = false, abort = false;
+        for(int colIndex = col+1; (colIndex<(col+4) && colIndex < 7 && !ok && !abort && rowIndex < 5); colIndex++) {
+            rowIndex++;
+            if(this.grilleValue[rowIndex][colIndex] == value) {
+                cpt++;
+            }
+            else {
+                abort = true;
+            }
+            if(cpt == 4)
+                ok = true;
+        }
+        abort = false;
+        rowIndex = row;
+        for(int colIndex = col-1; (colIndex>(col-4) && colIndex >= 0 && !ok && !abort && rowIndex > 0); colIndex--) {
+            rowIndex--;
+            if(this.grilleValue[rowIndex][colIndex] == value) {
+                cpt++;
+            }
+            else {
+                abort = true;
+            }
+            if(cpt == 4)
+                ok = true;
+        }
+        return ok;
+    }
+
+    public boolean isDiagonaleDecroissanteWin(int row, int col) {
+        int cpt = 1, rowIndex = row, value = this.grilleValue[row][col];
+        boolean ok = false, abort = false;
+        for(int colIndex = col+1; (colIndex<(col+4) && colIndex < 7 && !ok && !abort && rowIndex > 0); colIndex++) {
+            rowIndex--;
+            if(this.grilleValue[rowIndex][colIndex] == value) {
+                cpt++;
+            }
+            else {
+                abort = true;
+            }
+            if(cpt == 4)
+                ok = true;
+        }
+        abort = false;
+        rowIndex = row;
+        for(int colIndex = col-1; (colIndex>(col-4) && colIndex >= 0 && !ok && !abort && rowIndex < 5); colIndex--) {
+            rowIndex++;
+            if(this.grilleValue[rowIndex][colIndex] == value) {
                 cpt++;
             }
             else {
@@ -179,7 +257,7 @@ public class Puissance4Play extends AppCompatActivity {
         /**
          * Listener des boutons de la colonne 0 (la plus à gauche)
          */
-        final ImageButton buttonCase00 = (ImageButton) findViewById(R.id.case00);
+        /*final ImageButton buttonCase00 = (ImageButton) findViewById(R.id.case00);
         buttonCase00.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -233,11 +311,11 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
         /**
          * Listener des boutons de la colonne 1
          */
-        final ImageButton buttonCase01 = (ImageButton) findViewById(R.id.case01);
+        /*final ImageButton buttonCase01 = (ImageButton) findViewById(R.id.case01);
         buttonCase01.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -291,11 +369,11 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
         /**
          * Listener des boutons de la colonne 2
          */
-        final ImageButton buttonCase02 = (ImageButton) findViewById(R.id.case02);
+        /*final ImageButton buttonCase02 = (ImageButton) findViewById(R.id.case02);
         buttonCase02.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -349,11 +427,11 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
         /**
          * Listener des boutons de la colonne 3
          */
-        final ImageButton buttonCase03 = (ImageButton) findViewById(R.id.case03);
+        /*final ImageButton buttonCase03 = (ImageButton) findViewById(R.id.case03);
         buttonCase03.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -407,11 +485,11 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
         /**
          * Listener des boutons de la colonne 4
          */
-        final ImageButton buttonCase04 = (ImageButton) findViewById(R.id.case04);
+        /*final ImageButton buttonCase04 = (ImageButton) findViewById(R.id.case04);
         buttonCase04.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -465,11 +543,11 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
         /**
          * Listener des boutons de la colonne 5
          */
-        final ImageButton buttonCase05 = (ImageButton) findViewById(R.id.case05);
+        /*final ImageButton buttonCase05 = (ImageButton) findViewById(R.id.case05);
         buttonCase05.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -523,11 +601,11 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
         /**
          * Listener des boutons de la colonne 6
          */
-        final ImageButton buttonCase06 = (ImageButton) findViewById(R.id.case06);
+        /*final ImageButton buttonCase06 = (ImageButton) findViewById(R.id.case06);
         buttonCase06.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -581,6 +659,6 @@ public class Puissance4Play extends AppCompatActivity {
             }
 
         });
-
+*/
     }
 }
