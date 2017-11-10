@@ -724,13 +724,15 @@
 
                 <Button
                     android:id="@+id/buttonRetryPuissance4"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@android:style/Widget.Material.Button.Colored"
+                    android:layout_width="179dp"
+                    android:layout_height="66dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="@string/button_retry_puissance4" />
+                    android:text="@string/button_retry_puissance4"
+                    android:textSize="30sp" />
 
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
