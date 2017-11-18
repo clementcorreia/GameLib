@@ -13,28 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button playSudokuButton = (Button) findViewById(R.id.play_sudoku);
-        playSudokuButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SudokuPlay.class);
-                startActivity(intent);
-            }
-
-        });
-
-        final Button statsSudokuButton = (Button) findViewById(R.id.stats_sudoku);
-        statsSudokuButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SudokuStats.class);
-                startActivity(intent);
-            }
-
-        });
-
         final Button playQuizzButton = (Button) findViewById(R.id.play_quizz);
         playQuizzButton.setOnClickListener(new View.OnClickListener() {
 

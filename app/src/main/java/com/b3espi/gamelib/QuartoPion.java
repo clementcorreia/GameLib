@@ -1,13 +1,13 @@
 package com.b3espi.gamelib;
 
-public class Pion {
+public class QuartoPion {
 
 	private String taille;    // Moyen / Grand
 	private String couleur;   // Blanc / Noir
 	private String interieur; // Vide / Plein
 	private String forme;     // Rond / Carré
 	
-	public Pion (String t, String c, String i, String f){
+	public QuartoPion(String t, String c, String i, String f){
 		
 		this.taille = t;
 		this.couleur = c;
@@ -65,22 +65,22 @@ public class Pion {
 		this.forme = " ";
 	}
 	
-	public boolean memeTaille(Pion a, Pion b, Pion c){
+	public boolean memeTaille(QuartoPion a, QuartoPion b, QuartoPion c){
 		if(a.getTaille().equals(b.getTaille()) && a.getTaille().equals(c.getTaille()) && a.getTaille().equals(this.getTaille())) return true;
 		else return false;
 	}
 	
-	public boolean memeCouleur(Pion a, Pion b, Pion c){
+	public boolean memeCouleur(QuartoPion a, QuartoPion b, QuartoPion c){
 		if(a.getCouleur().equals(b.getCouleur()) && a.getCouleur().equals(c.getCouleur()) && a.getCouleur().equals(this.getCouleur())) return true;
 		else return false;
 	}
 	
-	public boolean memeInterieur(Pion a, Pion b, Pion c){
+	public boolean memeInterieur(QuartoPion a, QuartoPion b, QuartoPion c){
 		if(a.getInterieur().equals(b.getInterieur()) && a.getInterieur().equals(c.getInterieur()) && a.getInterieur().equals(this.getInterieur())) return true;
 		else return false;
 	}
 	
-	public boolean memeForme(Pion a, Pion b, Pion c){
+	public boolean memeForme(QuartoPion a, QuartoPion b, QuartoPion c){
 		if(a.getForme().equals(b.getForme()) && a.getForme().equals(c.getForme()) && a.getForme().equals(this.getForme())) return true;
 		else return false;
 	}
