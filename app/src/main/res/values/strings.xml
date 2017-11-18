@@ -8,10 +8,16 @@
     <string name="game_desc_quizz">Thème : Culture générale</string>
     <string name="game_name_puissance4">Puissance 4</string>
     <string name="game_desc_puissance4">Défiez vos amis au jeu du Puissance 4</string>
+    <string name="game_name_quarto">Quarto</string>
+    <string name="game_desc_quarto">Jeu combinatoire abstrait au tour par tour</string>
     <string name="imageView_contentDesc_puissance4_grille">Grille du puissance 4</string>
     <string name="imageButton_contentDesc_puissance4_jaune">Pion jaune</string>
     <string name="imageButton_contentDesc_puissance4_rouge">Pion rouge</string>
     <string name="button_lib_play">Jouer</string>
     <string name="button_lib_stats">Stats</string>
     <string name="accueil_bienvenue">Bienvenue sur notre sélection de jeux</string>
+    <string name="title_activity_quarto">Quarto</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

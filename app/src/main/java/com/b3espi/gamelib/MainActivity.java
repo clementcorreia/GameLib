@@ -100,5 +100,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        final Button playQuartoButton = (Button) findViewById(R.id.play_quarto);
+        playPuissance4Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Quarto.class);
+                startActivity(intent);
+            }
+
+        });
+
+        final Button statsQuartoButton = (Button) findViewById(R.id.stats_quarto);
+        statsPuissance4Button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, QuartoStats.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }
