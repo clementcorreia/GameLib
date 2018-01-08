@@ -17,6 +17,10 @@
     <string name="button_lib_stats">Stats</string>
     <string name="accueil_bienvenue">Bienvenue sur notre sélection de jeux</string>
     <string name="title_activity_quarto">Quarto</string>
+    <string name="regleQuarto">Règles :\nLa liste du bas vous donne la liste des pions disponibles.\nChaque pion est caractérisé par 4 caractéristiques :\n- Contour noir ou Sans contour\n- Blanc ou Marron\n- Creux ou Plein\n- Rond ou Carré\n\nLe plateau est constitué de 4x4 cases.\nLe but est de former un ligne ou colonne ou diagonale de quatre pions respectants un de ces critères en commun.\nATTENTION : C'est l'adversaire qui choisit le pion que vous allez placer.\n\n\n</string>
+    <string name="textViewWhichPlayerQuarto">A vous de jouer : </string>
+    <string name="boutonJouerQuarto">Jouer</string>
+    <string name="textPlayerName"></string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>

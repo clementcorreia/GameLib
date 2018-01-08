@@ -1,28 +1,25 @@
 package com.b3espi.gamelib;
 
-import android.content.ClipData;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.ImageButton;
 
 public class Quarto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quarto);
+        setContentView(R.layout.activity_quarto_play);
 
         // Assign the touch listener to your view which you want to move
-        final ImageButton buttonTest = (ImageButton) findViewById(R.id.pion1);
-        findViewById(R.id.pion1).setOnTouchListener(new MyTouchListener());
+        //final ImageButton buttonTest = (ImageButton) findViewById(R.id.pion1);
+        //findViewById(R.id.pion1).setOnTouchListener(new MyTouchListener());
 
     }
 }
 
+// Test pour le drag and drop
 // This defines your touch listener
-final class MyTouchListener implements View.OnTouchListener {
+/*final class MyTouchListener implements View.OnTouchListener {
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
             ClipData data = ClipData.newPlainText("", "");
@@ -34,4 +31,4 @@ final class MyTouchListener implements View.OnTouchListener {
             return false;
         }
     }
-}
+}*/
