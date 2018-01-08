@@ -3,21 +3,10 @@
 buildscript {
     repositories {
         jcenter()
-<<<<<<< HEAD
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-=======
         google() // new which replace https://maven.google.com
     }
     dependencies {
-<<<<<<< HEAD
-        classpath 'com.android.tools.build:gradle:3.0.0'
->>>>>>> dev
-=======
         classpath 'com.android.tools.build:gradle:3.0.1'
->>>>>>> dev
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -27,7 +16,6 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        google()
     }
 }
 
