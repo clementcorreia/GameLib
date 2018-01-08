@@ -1,4 +1,4 @@
-package com.b3espi.gamelib;
+package com.b3espi.gamelib.quarto;
 
 import java.util.ArrayList;
 import java.util.Scanner;

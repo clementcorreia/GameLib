@@ -6,34 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.b3espi.gamelib.demineur.DemineurPlay;
+import com.b3espi.gamelib.demineur.DemineurStats;
+import com.b3espi.gamelib.puissance4.Puissance4Play;
+import com.b3espi.gamelib.puissance4.Puissance4Stats;
+import com.b3espi.gamelib.quarto.QuartoPlay;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final Button playQuizzButton = (Button) findViewById(R.id.play_quizz);
-        playQuizzButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, QuizzPlay.class);
-                startActivity(intent);
-            }
-
-        });
-
-        final Button statsQuizzButton = (Button) findViewById(R.id.stats_quizz);
-        statsQuizzButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, QuizzStats.class);
-                startActivity(intent);
-            }
-
-        });
 
         final Button playDemineurButton = (Button) findViewById(R.id.play_demineur);
         playDemineurButton.setOnClickListener(new View.OnClickListener() {

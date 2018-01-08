@@ -1,7 +1,9 @@
-package com.b3espi.gamelib;
+package com.b3espi.gamelib.demineur;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.b3espi.gamelib.R;
 
 public class DemineurPlay extends AppCompatActivity {
 

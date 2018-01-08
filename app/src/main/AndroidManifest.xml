@@ -16,15 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizzPlay" />
-        <activity android:name=".QuizzStats" />
-        <activity android:name=".DemineurPlay" />
-        <activity android:name=".DemineurStats" />
-        <activity android:name=".Puissance4Play" />
-        <activity android:name=".Puissance4Stats" />
-        <activity android:name=".Quarto" />
+        <activity android:name=".demineur.DemineurPlay" />
+        <activity android:name=".demineur.DemineurStats" />
+        <activity android:name=".puissance4.Puissance4Play" />
+        <activity android:name=".puissance4.Puissance4Stats" />
+        <activity android:name=".quarto.Quarto" />
         <activity
-            android:name=".QuartoPlay"
+            android:name=".quarto.QuartoPlay"
             android:label="@string/title_activity_quarto_play"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

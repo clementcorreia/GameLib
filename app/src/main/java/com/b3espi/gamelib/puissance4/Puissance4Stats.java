@@ -1,7 +1,9 @@
-package com.b3espi.gamelib;
+package com.b3espi.gamelib.puissance4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.b3espi.gamelib.R;
 
 public class Puissance4Stats extends AppCompatActivity {
 
