@@ -22,7 +22,6 @@
         <activity android:name=".DemineurStats" />
         <activity android:name=".Puissance4Play" />
         <activity android:name=".Puissance4Stats" />
-        <activity android:name=".Quarto"/>
     </application>
 
 </manifest>

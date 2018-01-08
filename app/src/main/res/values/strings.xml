@@ -8,8 +8,6 @@
     <string name="game_desc_quizz">Thème : Culture générale</string>
     <string name="game_name_puissance4">Puissance 4</string>
     <string name="game_desc_puissance4">Défiez vos amis au jeu du Puissance 4</string>
-    <string name="game_name_quarto">Quarto</string>
-    <string name="game_desc_quarto">Jeu combinatoire abstrait au tour par tour</string>
     <string name="imageView_contentDesc_puissance4_grille">Grille du puissance 4</string>
     <string name="textViewWhichPlayer">Joue : </string>
     <string name="textViewWin">Gagnant : </string>
@@ -18,12 +16,4 @@
     <string name="button_lib_play">Jouer</string>
     <string name="button_lib_stats">Stats</string>
     <string name="accueil_bienvenue">Bienvenue sur notre sélection de jeux</string>
-    <string name="title_activity_quarto">Quarto</string>
-    <string name="regleQuarto">Règles :\nLa liste du bas vous donne la liste des pions disponibles.\nChaque pion est caractérisé par 4 caractéristiques :\n- Contour noir ou Sans contour\n- Blanc ou Marron\n- Creux ou Plein\n- Rond ou Carré\n\nLe plateau est constitué de 4x4 cases.\nLe but est de former un ligne ou colonne ou diagonale de quatre pions respectants un de ces critères en commun.\nATTENTION : C'est l'adversaire qui choisit le pion que vous allez placer.\n\n\n</string>
-    <string name="textViewWhichPlayerQuarto">A vous de jouer : </string>
-    <string name="boutonJouerQuarto">Jouer</string>
-    <string name="textPlayerName"></string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
 </resources>

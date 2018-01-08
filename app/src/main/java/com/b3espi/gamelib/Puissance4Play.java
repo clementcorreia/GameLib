@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 public class Puissance4Play extends AppCompatActivity {
 
     /**
-     * QuartoGrille représentant le puissance 4.
+     * Grille représentant le puissance 4.
      * Si la case est à -1 alors c'est qu'elle est vide.
      * Sinon 0 pour rouge et 1 pour jaune.
      */
