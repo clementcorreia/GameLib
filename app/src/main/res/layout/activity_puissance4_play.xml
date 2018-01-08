@@ -661,31 +661,83 @@
             </TableRow>
         </TableLayout>
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textWhichPlayer"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/indication"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/textViewWhichPlayer"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteY="0dp">
 
-            <ImageButton
-                android:id="@+id/casePlayer"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="1dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/boutonblanc" />
+                <TextView
+                    android:id="@+id/textWhichPlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textViewWhichPlayer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/casePlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/boutonblanc" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/indicationGagnant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteY="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textWhichPlayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/textViewWin"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+                    <ImageButton
+                        android:id="@+id/caseGagnant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/imageButton_contentDesc_puissance4"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/boutonblanc" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonRetryPuissance4"
+                    style="@android:style/Widget.Material.Button.Colored"
+                    android:layout_width="179dp"
+                    android:layout_height="66dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/button_retry_puissance4"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
 
