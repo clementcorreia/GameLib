@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.b3espi.gamelib.QuartoPlay">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,30 +33,38 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:weightSum="3">
 
             <EditText
                 android:id="@+id/nomJoueur1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentLeft="true"
-                android:text="Nom Joueur 1"/>
+                android:text="Nom Joueur 1"
+                android:layout_weight="1"/>
 
             <EditText
                 android:id="@+id/nomJoueur2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_toRightOf="@+id/nomJoueur1"
-                android:text="Nom Joueur 2"/>
+                android:text="Nom Joueur 2"
+                android:layout_weight="1"/>
 
             <Button
+                android:id="@+id/jouerQuarto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/nomJoueur2"
-                android:text="@string/boutonJouerQuarto"/>
-        </RelativeLayout>
+                android:text="@string/boutonJouerQuarto"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

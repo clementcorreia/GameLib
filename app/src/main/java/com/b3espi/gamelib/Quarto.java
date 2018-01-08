@@ -8,7 +8,7 @@ public class Quarto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quarto_play);
+        setContentView(R.layout.activity_quarto_game);
 
         // Assign the touch listener to your view which you want to move
         //final ImageButton buttonTest = (ImageButton) findViewById(R.id.pion1);
