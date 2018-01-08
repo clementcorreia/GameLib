@@ -10,23 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:orientation="vertical">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:background="@color/grisQuarto"
             android:padding="5dp"
             android:weightSum="4"
             app:layout_constraintTop_toTopOf="parent">
@@ -38,53 +27,33 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
             </TableRow>
 
             <TableRow
@@ -94,62 +63,33 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="232dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="60dp"
-                    tools:layout_editor_absoluteY="232dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="113dp"
-                    tools:layout_editor_absoluteY="232dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="166dp"
-                    tools:layout_editor_absoluteY="232dp" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
             </TableRow>
 
             <TableRow
@@ -159,62 +99,33 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="232dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="60dp"
-                    tools:layout_editor_absoluteY="232dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="113dp"
-                    tools:layout_editor_absoluteY="232dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/case12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="166dp"
-                    tools:layout_editor_absoluteY="232dp" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
             </TableRow>
 
             <TableRow
@@ -224,64 +135,34 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageButton
-                    android:id="@+id/case14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="60dp"
-                    tools:layout_editor_absoluteY="179dp" />
-
-                <ImageButton
+                <ImageView
                     android:id="@+id/case13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="179dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
-                <ImageButton
+                <ImageView
+                    android:id="@+id/case14"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
+
+                <ImageView
                     android:id="@+id/case15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="113dp"
-                    tools:layout_editor_absoluteY="179dp" />
-
-                <ImageButton
-                    android:id="@+id/case17"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_margin="1dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
-                    android:contentDescription="@string/imageButton_contentDesc_puissance4"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/case_quarto"
-                    tools:layout_editor_absoluteX="166dp"
-                    tools:layout_editor_absoluteY="179dp" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
 
+                <ImageView
+                    android:id="@+id/case16"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/case_quarto" />
             </TableRow>
-
         </TableLayout>
 
         <LinearLayout
@@ -290,7 +171,6 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
-
 
             <TextView
                 android:id="@+id/textWhichPlayer"
@@ -314,100 +194,161 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <HorizontalScrollView
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:padding="5dp"
+                android:weightSum="4"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <LinearLayout
+                <TableRow
+                    android:id="@+id/newRow1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_weight="1"
+                    android:weightSum="4">
 
                     <ImageView
+                        android:id="@+id/pion1"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_creux_carre" />
 
                     <ImageView
+                        android:id="@+id/pion2"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_creux_rond" />
 
                     <ImageView
+                        android:id="@+id/pion3"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_plein_carre" />
 
                     <ImageView
+                        android:id="@+id/pion4"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_plein_rond" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/newRow2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="4">
 
                     <ImageView
+                        android:id="@+id/pion5"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_creux_carre" />
 
                     <ImageView
+                        android:id="@+id/pion6"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_creux_rond" />
 
                     <ImageView
+                        android:id="@+id/pion7"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_plein_carre" />
 
                     <ImageView
+                        android:id="@+id/pion8"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_plein_rond" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/newRow3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="4">
 
                     <ImageView
+                        android:id="@+id/pion9"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_creux_carre" />
 
                     <ImageView
+                        android:id="@+id/pion10"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_creux_rond" />
 
                     <ImageView
+                        android:id="@+id/pion11"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_plein_carre" />
 
                     <ImageView
+                        android:id="@+id/pion12"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_plein_rond" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/newRow4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:weightSum="4">
 
                     <ImageView
+                        android:id="@+id/pion13"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_creux_carre" />
 
                     <ImageView
+                        android:id="@+id/pion14"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_creux_rond" />
 
                     <ImageView
+                        android:id="@+id/pion15"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_plein_carre" />
 
                     <ImageView
+                        android:id="@+id/pion16"
+                        android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_plein_rond" />
-
-                </LinearLayout>
-            </HorizontalScrollView>
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
-
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
