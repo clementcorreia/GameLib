@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
         final Button playQuartoButton = (Button) findViewById(R.id.play_quarto);
         playQuartoButton.setOnClickListener(new View.OnClickListener() {
 
