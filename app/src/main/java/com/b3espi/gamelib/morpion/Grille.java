@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package morpion;
+package com.b3espi.gamelib.morpion;
 
 /**
  *
@@ -11,10 +11,14 @@ package morpion;
  */
 public class Grille {
 
-    private final static int x = 3;
+    private final static int x = 3; // Taille des colonnes et lignes
     private char[][] tableau;
 
     public Grille() {
+        initGrille();
+    }
+
+    public void initGrille(){
         this.tableau = new char[x][x];
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < x; j++) {
@@ -24,51 +28,71 @@ public class Grille {
     }
 
     public String toString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
 
-        str += "(" + this.tableau[0][0] + ")(" + this.tableau[0][1] + ")(" + this.tableau[0][2] + ")\n";
-        str += "(" + this.tableau[1][0] + ")(" + this.tableau[1][1] + ")(" + this.tableau[1][2] + ")\n";
-        str += "(" + this.tableau[2][0] + ")(" + this.tableau[2][1] + ")(" + this.tableau[2][2] + ")\n";
+        str.append("   0  1  2\n");
+        str.append("0 (");
+        str.append(this.tableau[0][0]);
+        str.append(")(");
+        str.append(this.tableau[0][1]);
+        str.append(")(");
+        str.append(this.tableau[0][2]);
+        str.append(")\n");
+        str.append("1 (");
+        str.append(this.tableau[1][0]);
+        str.append(")(");
+        str.append(this.tableau[1][1]);
+        str.append(")(");
+        str.append(this.tableau[1][2]);
+        str.append(")\n");
+        str.append("2 (");
+        str.append(this.tableau[2][0]);
+        str.append(")(");
+        str.append(this.tableau[2][1]);
+        str.append(")(");
+        str.append(this.tableau[2][2]);
+        str.append(")\n");
 
-        return str;
+        return str.toString();
     }
 
-    public void ajouter(char choix, int x, int y) { // position [0] = x position [1] = y
+    /**
+     * Ajoute @param choix à la position @param x et @param y du tableau
+     * position [0] = x position [1] = y
+     */
+    public void ajouter(char choix, int x, int y) {
         this.tableau[x][y] = choix;
     }
 
-    public boolean nonNul(int x, int y, int x2, int y2) {
-        boolean bool = false;
-        if (this.tableau[x][y] != ' ' && this.tableau[x2][y2] != ' ') {
-            if (this.tableau[x][y] == this.tableau[x2][y2]) {
-                bool = true;
-            }
-        }
-        return bool;
-
+    private boolean nonNul(int x, int y, int x2, int y2) {
+        return this.tableau[x][y] != ' ' && this.tableau[x2][y2] != ' ';
     }
 
-    public boolean testGagnant(int x, int y, int x2, int y2) {
-        boolean gagnant = false;
-        if (nonNul(x, y, x2, y2) == true) {
+    private boolean testGagnant(int x, int y, int x2, int y2) {
+        return nonNul(x, y, x2, y2) && this.tableau[x][y] == this.tableau[x2][y2];
+    }
 
-            if ((this.tableau[x][y] == 'X' || this.tableau[x][y] == 'O') && (this.tableau[x2][y2] == 'X' || this.tableau[x2][y2] == 'O')) {
-                if (this.tableau[x][y] == this.tableau[x2][y2]) {
-                    gagnant = true;
-                }
-            } else {
-                gagnant = false;
-            }
-            return gagnant;
+    public boolean testGagne() {
+        boolean gagnant = false;
+        if (testGagnant(0, 0, 0, 1) && testGagnant(0, 1, 0, 2)){
+            gagnant = true;
+        } else if (testGagnant(1, 0, 1, 1) && testGagnant(1, 1, 1, 2)){
+            gagnant = true;
+        } else if (testGagnant(2, 0, 2, 1) && testGagnant(2, 1, 2, 2)){
+            gagnant = true;
+        } else if (testGagnant(0, 0, 1, 0) && testGagnant(1, 0, 2, 0)){
+            gagnant = true;
+        } else if (testGagnant(0, 1, 1, 1) && testGagnant(1, 1, 2, 1)){
+            gagnant = true;
+        } else if (testGagnant(0, 2, 1, 2) && testGagnant(1, 2, 2, 2)){
+            gagnant = true;
+        } else if (testGagnant(0, 0, 1, 1) && testGagnant(1, 1, 2, 2)){
+            gagnant = true;
+        } else if (testGagnant(2, 2, 1, 1) && testGagnant(1, 1, 0, 0)){
+            gagnant = true;
+        } else if (testGagnant(0, 2, 1, 1) && testGagnant(1, 1, 2, 0)){
+            gagnant = true;
         }
         return gagnant;
-    }
-
-    public void clear() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                this.tableau[i][j] = ' ';
-            }
-        }
     }
 }

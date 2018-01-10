@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package morpion;
+package com.b3espi.gamelib.morpion;
 
 /**
  *
@@ -18,6 +18,7 @@ public class Joueur {
 
     public Joueur(String nom){
         this.nom = nom;
+        this.score = 0;
     }
 
     public char getTypePion() {
@@ -48,7 +49,7 @@ public class Joueur {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void incrementeScore() {
+        this.score++;
     }
 }

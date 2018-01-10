@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package morpion;
+package com.b3espi.gamelib.morpion;
 
 import java.util.Scanner;
 
@@ -27,7 +27,7 @@ public class JeuTour {
         grilleMorpion = new Grille();
         System.out.println(grilleMorpion.toString());
 
-        choix();
+        boucleJeu();
     }
 
     // Initialise les joueurs
@@ -36,73 +36,93 @@ public class JeuTour {
         System.out.print("Joueur 1 : ");
         this.joueur1 = new Joueur(sc.nextLine());
         System.out.print("Joueur 2 : ");
-        this.nomJoueur2 = new Joueur(sc.nextLine());
-        sc.close();
+        this.joueur2 = new Joueur(sc.nextLine());
     }
 
     public void boucleJeu(){
-
+        boolean rejouer = false;
         do {
-            boolean rejouer = false;
+            rejouer = false;
             choixDepart();
             choixTypePion();
-
             do{
                 if(joueur1.isCommence()){
                     emplacement(joueur1);
-                    if(!testGagne()) emplacement(joueur2);
+                    System.out.println(this.grilleMorpion.toString());
+                    if(!testGagne()){
+                        emplacement(joueur2);
+                        if(testGagne()){
+                            joueur2.incrementeScore();
+                            System.out.println(joueur2.getNom()+" a gagné !\nScore :\n"+joueur1.getNom()+" = "+joueur1.getScore()+"\n"+joueur2.getNom()+" = "+joueur2.getScore());
+                        }
+                    }
                     else{
-                        System.out.println(joueur1.getNom()+" a gagné !\nScore :\n"+joueur1.getNom()+" = "+joueur1.getScore()+"\n"+joueur1.getNom()+" = "+joueur1.getScore());
+                        joueur1.incrementeScore();
+                        System.out.println(joueur1.getNom()+" a gagné !\nScore :\n"+joueur1.getNom()+" = "+joueur1.getScore()+"\n"+joueur2.getNom()+" = "+joueur2.getScore());
                     }
                 }else{
                     emplacement(joueur2);
-                    if(!testGagne()) emplacement(joueur1);
+                    System.out.println(this.grilleMorpion.toString());
+                    if(!testGagne()) {
+                        emplacement(joueur1);
+                        if(testGagne()) {
+                            joueur1.incrementeScore();
+                            System.out.println(joueur1.getNom()+" a gagné !\nScore :\n"+joueur1.getNom()+" = "+joueur1.getScore()+"\n"+joueur2.getNom()+" = "+joueur2.getScore());
+                        }
+                    }
                     else{
-                        System.out.println(joueur2.getNom()+" a gagné !\nScore :\n"+joueur1.getNom()+" = "+joueur1.getScore()+"\n"+joueur1.getNom()+" = "+joueur1.getScore());
+                        joueur2.incrementeScore();
+                        System.out.println(joueur2.getNom()+" a gagné !\nScore :\n"+joueur1.getNom()+" = "+joueur1.getScore()+"\n"+joueur2.getNom()+" = "+joueur2.getScore());
                     }
                 }
-                joueur1.setCommence(!joueur1.isCommence());
-                joueur2.setCommence(!joueur2.isCommence());
+                System.out.println(this.grilleMorpion.toString());
             }while(!testGagne());
 
             System.out.println("Souhaitez-vous rejouez ? [O/N]");
             Scanner sc = new Scanner(System.in);
             String choixRejouer = sc.nextLine().toUpperCase();
-            if (choixRejouer == "O") {
-                this.grilleMorpion.clear();
+            if (choixRejouer.equals("O")) {
+                this.grilleMorpion.initGrille();
                 rejouer = true;
             }
-        }while(rejouer)
+        }while(rejouer);
+        System.out.println("Merci au revoir.");
     }
 
-    //  CHOISIS ALEATOIREMENT QUI COMMENCE LA PARTIE
-    //
+    /*
+     * Choisit aléatoirement qui commence
+     */
     public void choixDepart() {
         int temp;
         temp = (Math.random() <= 0.5) ? 1 : 2;
         if (temp == 1) {
             joueur1.setCommence(true);
-            System.out.println(joueur1.getNom() + " commence la partie et choisis ses pions ");
+            System.out.println(joueur1.getNom() + " commence la partie.");
         } else {
             joueur2.setCommence(false);
-            System.out.println(joueur2.getNom() + " commence la partie et choisis ses pions ");
+            System.out.println(joueur2.getNom() + " commence la partie.");
         }
     }
 
-    //  CHOIX PION
-//
+    /*
+     * Choix du type de pion des deux joueurs
+     */
     public void choixTypePion() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(" Choissisez vos pions pour cette manche ['X' ou 'O' ou autre]");
-        joueur1.setTypePion(sc.nextLine().charAt(0));
-        System.out.println(joueur2.getNom() + " jouera avec les " + joueur1.getTypePion());
+        System.out.println(joueur1.getNom()+" choissisez vos pions pour cette manche ['X' ou 'O' ou autre]");
+        String str = sc.nextLine();
+        joueur1.setTypePion(str.charAt(0));
+        System.out.println(joueur1.getNom() + " jouera avec les " + joueur1.getTypePion());
 
-        System.out.println(" Choissisez vos pions pour cette manche ['X' ou 'O' ou autre]");
+        System.out.println(joueur2.getNom()+" choissisez vos pions pour cette manche ['X' ou 'O' ou autre]");
         joueur2.setTypePion(sc.nextLine().charAt(0));
         System.out.println(joueur2.getNom() + " jouera avec les " + joueur2.getTypePion());
     }
 
+    /**
+     * Demande au @param joueur de jouer et inscrit le choix dans la grille
+     */
     private void emplacement(Joueur joueur) {
         Scanner sc = new Scanner(System.in);
         System.out.println(joueur.getNom() + " jouez");
@@ -114,48 +134,11 @@ public class JeuTour {
         this.grilleMorpion.ajouter(joueur.getTypePion(), x1, y1);
     }
 
-    // // gagnant == toujours true
-    //
+    /*
+     * Return true si il y a une combinaison gagnante dans la grille
+     * TODO : Retourner la combinaison gagnante et le joueur qui gagne
+     */
     private boolean testGagne() {
-        if (grilleMorpion.testGagnant(0, 0, 0, 1)) {
-            if (grilleMorpion.testGagnant(0, 1, 0, 2)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(1, 0, 1, 1)) {
-            if (grilleMorpion.testGagnant(1, 1, 1, 2)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(2, 0, 2, 1)) {
-            if (grilleMorpion.testGagnant(2, 1, 2, 2)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(0, 0, 1, 0)) {
-            if (grilleMorpion.testGagnant(1, 0, 2, 0)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(0, 1, 1, 1)) {
-            if (grilleMorpion.testGagnant(1, 1, 2, 1)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(0, 2, 1, 2)) {
-            if (grilleMorpion.testGagnant(1, 2, 2, 2)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(0, 0, 1, 1)) {
-            if (grilleMorpion.testGagnant(1, 1, 2, 2)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(2, 2, 1, 1)) {
-            if (grilleMorpion.testGagnant(1, 1, 0, 0)) {
-                gagnant = true;
-            }
-        } else if (grilleMorpion.testGagnant(0, 2, 1, 1)) {
-            if (grilleMorpion.testGagnant(1, 1, 2, 0)) {
-                gagnant = true;
-            }
-        } else {
-            gagnant = false;
-        }
-        return gagnant;
+        return this.grilleMorpion.testGagne();
     }
 }
