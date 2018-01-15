@@ -12,8 +12,8 @@ import com.b3espi.gamelib.R;
 
 public class QuartoPlay extends AppCompatActivity {
 
-    // On déclare une constante dans la classe FirstClass
-    public final static String NOMS = "com.b3espi.gamelib.quarto.NOMS";
+    public final static String JOUEUR1 = "com.b3espi.gamelib.quarto.JOUEUR1";
+    public final static String JOUEUR2 = "com.b3espi.gamelib.quarto.JOUEUR2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,11 @@ public class QuartoPlay extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(QuartoPlay.this, Quarto.class);
 
-                String [] noms = new String[] {joueur1.getText().toString(), joueur2.getText().toString()};
-                intent.putExtra(QuartoPlay.NOMS, noms);
+                String nomJoueur1 = new String (joueur1.getText().toString());
+                String nomJoueur2 = new String (joueur2.getText().toString());
+
+                intent.putExtra(QuartoPlay.JOUEUR1, nomJoueur1);
+                intent.putExtra(QuartoPlay.JOUEUR2, nomJoueur2);
                 startActivity(intent);
             }
         });

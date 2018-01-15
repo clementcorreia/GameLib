@@ -21,10 +21,7 @@
         <activity android:name=".puissance4.Puissance4Play" />
         <activity android:name=".puissance4.Puissance4Stats" />
         <activity android:name=".quarto.Quarto" />
-        <activity
-            android:name=".quarto.QuartoPlay"
-            android:label="@string/title_activity_quarto_play"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".quarto.QuartoPlay"/>
     </application>
 
 </manifest>

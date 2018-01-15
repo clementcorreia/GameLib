@@ -66,25 +66,28 @@ public class QuartoGrille {
 		this.cases[i] = "|     |";
 		}
 		// --------------- PIONS ---------------
-		pions[0] = new QuartoPion("M", "B", "P", "C");
-		pions[1] = new QuartoPion("M", "B", "P", "R");
-		pions[2] = new QuartoPion("M", "B", "V", "C");
-		pions[3] = new QuartoPion("M", "B", "V", "R");
 
-		pions[4] = new QuartoPion("M", "N", "P", "C");
-		pions[5] = new QuartoPion("M", "N", "P", "R");
-		pions[6] = new QuartoPion("M", "N", "V", "C");
-		pions[7] = new QuartoPion("M", "N", "V", "R");
+		pions[0] = new QuartoPion("G", "B", "V", "C");
+		pions[1] = new QuartoPion("G", "B", "V", "R");
+		pions[2] = new QuartoPion("G", "B", "P", "C");
+		pions[3] = new QuartoPion("G", "B", "P", "R");
 
-		pions[8] = new QuartoPion("G", "B", "P", "C");
-		pions[9] = new QuartoPion("G", "B", "P", "R");
-		pions[10] = new QuartoPion("G", "B", "V", "C");
-		pions[11] = new QuartoPion("G", "B", "V", "R");
+		pions[4] = new QuartoPion("G", "N", "V", "C");
+		pions[5] = new QuartoPion("G", "N", "V", "R");
+		pions[6] = new QuartoPion("G", "N", "P", "C");
+		pions[7] = new QuartoPion("G", "N", "P", "R");
 
-		pions[12] = new QuartoPion("G", "N", "P", "C");
-		pions[13] = new QuartoPion("G", "N", "P", "R");
-		pions[14] = new QuartoPion("G", "N", "V", "C");
-		pions[15] = new QuartoPion("G", "N", "V", "R");
+		pions[8] = new QuartoPion("M", "B", "V", "C");
+		pions[9] = new QuartoPion("M", "B", "V", "R");
+		pions[10] = new QuartoPion("M", "B", "P", "C");
+		pions[11] = new QuartoPion("M", "B", "P", "R");
+
+		pions[12] = new QuartoPion("M", "N", "V", "C");
+		pions[13] = new QuartoPion("M", "N", "V", "R");
+		pions[14] = new QuartoPion("M", "N", "P", "C");
+		pions[15] = new QuartoPion("M", "N", "P", "R");
+
+
 		//---------------------------------------
 		
 		// INITIALISATION LISTE GAIN ------------

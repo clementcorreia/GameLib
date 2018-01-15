@@ -1,6 +1,7 @@
 package com.b3espi.gamelib.quarto;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class QuartoJeu {
@@ -10,15 +11,13 @@ public class QuartoJeu {
 	private boolean joueur; // true : joueur 1 // false : joueur 2
 	
 	public QuartoJeu(){
-		this.joueur = true;
+		this.joueur = choixJoueur();
 		this.boucleJeu();
 	}
-	
+
 	public void boucleJeu() {
-		System.out.println("Règles :\nLa colonne de droite vous donne la liste des pions disponibles.\nChaque pion est caractérisé par 4 caractéristiques :\n- M/G : Moyen ou Grand\n- B/N : Blanc ou Noir\n- V/P : Vide ou Plein\n- R/C : Rond ou Carré\n\nLe but est de former un ligne ou colonne ou diagonale de quatre pions respectants un de ces critères en commun.\nL'adversaire choisit le pion que vous allez placer.\n\n\n");
-		
+
 		QuartoGrille quarto = new QuartoGrille();
-		System.out.println(quarto.construction());
 		
 		ArrayList<String> gagne = quarto.gagne();
 		while(gagne.isEmpty()){
@@ -57,7 +56,15 @@ public class QuartoJeu {
 			System.out.print(quarto.construction());
 		}
 	}
-	
+
+
+	private boolean choixJoueur(){
+		Random rand = new Random();
+		int i = rand.nextInt(2);
+		if(i == 1) return true;
+		else return false;
+	}
+
 	private int choixPion (QuartoGrille g){
 		int pion;
 		boolean boucle = false;
