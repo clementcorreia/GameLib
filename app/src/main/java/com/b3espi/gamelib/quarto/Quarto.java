@@ -118,7 +118,7 @@ public class Quarto extends AppCompatActivity {
 
     }
 
-    public void boucleJeu() {
+    /*public void boucleJeu() {
 
         QuartoGrille quarto = new QuartoGrille();
 
@@ -153,7 +153,7 @@ public class Quarto extends AppCompatActivity {
                 }
             }
         }
-    }
+    }*/
 
     private boolean choixJoueur(){
         Random rand = new Random();
@@ -173,7 +173,7 @@ public class Quarto extends AppCompatActivity {
     private void choixCase (int caseChoisie){
         if(this.caseChoisie == -1) {
             ImageButton pion = (ImageButton) findViewById(idPion[this.pionChoisit]);
-            pion.setImageResource(R.id);
+            //pion.setImageResource(R.id);
             this.pions[this.pionChoisit].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

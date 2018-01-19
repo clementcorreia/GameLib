@@ -13,6 +13,7 @@
     <string name="imageView_contentDesc_puissance4_grille">Grille du puissance 4</string>
     <string name="textViewWhichPlayer">Joue : </string>
     <string name="imageButton_contentDesc_puissance4">Pion</string>
+    <string name="button_retry_puissance4">Rejouer</string>
     <string name="button_lib_play">Jouer</string>
     <string name="button_lib_stats">Stats</string>
     <string name="accueil_bienvenue">Bienvenue sur notre sélection de jeux</string>

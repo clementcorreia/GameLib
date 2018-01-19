@@ -23,6 +23,7 @@ public class Puissance4Play extends AppCompatActivity {
     private LinearLayout gagnant, indication;
     private ImageButton boutonGagnant;
     private Button retryButton;
+    private static int cpt = 0;
 
     public void initialise() {
         System.out.println("Initialise");
@@ -87,7 +88,7 @@ public class Puissance4Play extends AppCompatActivity {
         }
 
         ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
-        if(this.currentPlayer == "jaune") {
+        if(Puissance4Play.cpt%2 == 0) {
             this.currentPlayer = "rouge";
             playerButton.setImageResource(R.drawable.boutonrouge);
         }
@@ -111,7 +112,7 @@ public class Puissance4Play extends AppCompatActivity {
             }
         }
     }
-
+    
     public void playRouge(int col) {
         boolean trouve = false;
         for(int row=0; row<6 && !trouve; row++) {
@@ -287,6 +288,7 @@ public class Puissance4Play extends AppCompatActivity {
         this.retryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Puissance4Play.cpt++;
                 finish();
                 //Intent intent = new Intent(Puissance4Play.this, Puissance4Play.class);
                 startActivity(getIntent());
