@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class QuartoJeu {
 	
-	private int pion; // pion : numéro du pion choisit
+	private int pion; // numéro du pion choisit
 	private String cases;
-	private boolean joueur; // true : joueur 1 // false : joueur 2
+	private boolean joueur; // ? joueur 1 : joueur 2
 	
 	public QuartoJeu(){
 		this.joueur = choixJoueur();
@@ -53,7 +53,6 @@ public class QuartoJeu {
 			}
 			System.out.println("------------------------------------------------------------------------------------------------------");
 			System.out.println("------------------------------------------------------------------------------------------------------");
-			System.out.print(quarto.construction());
 		}
 	}
 

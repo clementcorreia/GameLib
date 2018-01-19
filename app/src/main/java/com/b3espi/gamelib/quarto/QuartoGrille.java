@@ -6,12 +6,11 @@ public class QuartoGrille {
 	
 	// Attributs --------------------------------------------------------
 	private QuartoPion[] pions; // tableau des pions de la grille
-	private String[] colonneUn;   // "|1| "
-	private String[] colonneDeux; // "|      "
-	private String[] cases;       // "|     |"  Pour l'affichage
+
 	private QuartoPion[] listeCase; // tableau des cases épurées pour calculer siGagne()
 	private boolean [] pionRestant;  // tab des pions restant (true = dispo; false = non dispo)
 	private boolean [] caseRestante; // tab des cases restantes (true = dispo; false = non dispo) 
+
 	private static final int taille = 16; // taille des différents tableaux
 	private static final int[] listeComb = new int[40]; // Liste des combinaisons a tester pour le gain
 	
@@ -19,11 +18,8 @@ public class QuartoGrille {
 
 	public QuartoGrille() {
 		
-		//----------------------------------------------------------------- 
+		//-----------------------------------------------------------------
 		pions = new QuartoPion[taille];
-		colonneUn = new String [taille];
-		colonneDeux = new String [taille];
-		cases = new String [taille];
 		pionRestant = new boolean[taille];
 		caseRestante = new boolean[taille];
 		listeCase = new QuartoPion[taille];
@@ -36,35 +32,7 @@ public class QuartoGrille {
 		for (int i=0; i<caseRestante.length; i++){ // initialisation caseRestant[]
 			caseRestante[i] = true;
 		}
-		
-		StringBuilder str = new StringBuilder();
-		for(int i=0; i<taille; i++){ 			   // initialisation colonneUn
-			if (i<9) {
-				str.append("|");
-				str.append(i+1);
-				str.append(" | ");
-				colonneUn[i] = str.toString();
-			}
-			else {
-				str.append("|");
-				str.append(i+1);
-				str.append("| ");
-				colonneUn[i] = str.toString();
-			}
-		}
-		str.delete(0, str.length());
 
-		for(int i=0; i<taille; i++){ 			   // initialisation colonneDeux
-			if(i==0) colonneDeux[i] = " |      A ";
-			else if(i==1) colonneDeux[i] = " |      B ";
-			else if(i==2) colonneDeux[i] = " |      C ";
-			else if(i==3) colonneDeux[i] = " |      D ";
-			else colonneDeux[i] = " |        ";
-		}
-		
-		for(int i=0; i<taille; i++){ 			   // initialisation cases[]
-		this.cases[i] = "|     |";
-		}
 		// --------------- PIONS ---------------
 
 		pions[0] = new QuartoPion("G", "B", "V", "C");
@@ -149,10 +117,6 @@ public class QuartoGrille {
 		return QuartoGrille.listeComb[i];
 	}
 	
-	public void setCase (String pion, int indice){ // concatène le pion dans la case du tableau de cases
-		this.cases[indice] = "|"+pion+"|";
-	}
-	
 	public void setNulli(int i){ // efface le pion à l'indice i
 		this.pions[i].setNull();
 	}
@@ -173,46 +137,7 @@ public class QuartoGrille {
 	// ---------------------------------------------METHODES UTILES----------------------------------------------
 	// ----------------------------------------------------------------------------------------------------------
 	
-	public String construction (){ // Concatène la grille en String
-		
-		StringBuilder res = new StringBuilder();
-		res.append("                      1      2      3      4\n");
-		
-		for (int i=0; i<taille; i++){
-			
-			res.append(this.colonneUn[i]);
-			res.append(this.pions[i].toStringPion());
-			res.append(this.colonneDeux[i]);
-			
-			if(i==0) {
-				res.append(this.cases[0]);
-				res.append(this.cases[1]);
-				res.append(this.cases[2]);
-				res.append(this.cases[3]);
-			}
-			else if(i==1) {
-				res.append(this.cases[4]);
-				res.append(this.cases[5]);
-				res.append(this.cases[6]);
-				res.append(this.cases[7]);
-			}
-			else if(i==2) {
-				res.append(this.cases[8]);
-				res.append(this.cases[9]);
-				res.append(this.cases[10]);
-				res.append(this.cases[11]);
-			}
-			else if(i==3) {
-				res.append(this.cases[12]);
-				res.append(this.cases[13]);
-				res.append(this.cases[14]);
-				res.append(this.cases[15]);
-			}
-			
-			res.append("\n");
-		}
-		return res.toString();
-	}
+
 	
 	public int recupCase (String ligne, String colonne){ // retourne l'indice dans le tableau des cases, de la case choisit
 		
@@ -255,7 +180,6 @@ public class QuartoGrille {
 		String[] position = transfo(s);
 		int indiceC = recupCase(position[0], position[1]);
 		
-		this.setCase(pionString, indiceC); // Pour affichage
 		this.setListeCase(pion, indiceC); // Pour gestion de gain
 		this.setCaseRestanteI(indiceC, false);
 	}

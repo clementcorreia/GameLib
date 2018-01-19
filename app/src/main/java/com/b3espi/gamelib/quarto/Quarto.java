@@ -18,6 +18,8 @@ import java.util.Random;
 public class Quarto extends AppCompatActivity {
 
     private ImageButton[] pions;
+    private int[] idPion;
+
     private ImageButton[] cases;
 
     private int pionChoisit;
@@ -26,6 +28,8 @@ public class Quarto extends AppCompatActivity {
     private String joueur1;
     private String joueur2;
     private boolean joueur; // true : joueur 1 // false : joueur 2
+
+    private QuartoGrille quarto;
 
     final private static int taille = 16;
 
@@ -37,7 +41,16 @@ public class Quarto extends AppCompatActivity {
         Intent noms = getIntent();
         this.joueur1 = noms.getStringExtra(QuartoPlay.JOUEUR1);
         this.joueur2 = noms.getStringExtra(QuartoPlay.JOUEUR2);
+
+
+        this.quarto = new QuartoGrille();
+
+        // Affichage du joueur qui doit jouer
         this.joueur = choixJoueur();
+        TextView displayPlayer = (TextView) findViewById(R.id.textPlayerName);
+        if(this.joueur) displayPlayer.setText(this.joueur1);
+        else displayPlayer.setText(this.joueur2);
+        this.joueur = !this.joueur;
 
         this.pionChoisit = -1;
         this.caseChoisie = -2;
@@ -46,269 +59,69 @@ public class Quarto extends AppCompatActivity {
         this.cases = new ImageButton[taille];
 
         // Grille
-        this.cases[0] = (ImageButton) findViewById(R.id.case1) ;
-        this.cases[0].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(0);
-            }
-        });
-
-        this.cases[1] = (ImageButton) findViewById(R.id.case2) ;
-        this.cases[1].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(1);
-            }
-        });
-
-        this.cases[2] = (ImageButton) findViewById(R.id.case3) ;
-        this.cases[2].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(2);
-            }
-        });
-
-        this.cases[3] = (ImageButton) findViewById(R.id.case4) ;
-        this.cases[3].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(3);
-            }
-        });
-
-        this.cases[4] = (ImageButton) findViewById(R.id.case5) ;
-        this.cases[4].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(4);
-            }
-        });
-
-        this.cases[5] = (ImageButton) findViewById(R.id.case6) ;
-        this.cases[5].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(5);
-            }
-        });
-
-        this.cases[6] = (ImageButton) findViewById(R.id.case7) ;
-        this.cases[6].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(6);
-            }
-        });
-
-        this.cases[7] = (ImageButton) findViewById(R.id.case8) ;
-        this.cases[7].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(7);
-            }
-        });
-
-        this.cases[8] = (ImageButton) findViewById(R.id.case9) ;
-        this.cases[8].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(8);
-            }
-        });
-
-        this.cases[9] = (ImageButton) findViewById(R.id.case10) ;
-        this.cases[9].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(9);
-            }
-        });
-
-        this.cases[10] = (ImageButton) findViewById(R.id.case11) ;
-        this.cases[10].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(10);
-            }
-        });
-
-        this.cases[11] = (ImageButton) findViewById(R.id.case12) ;
-        this.cases[11].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(11);
-            }
-        });
-
-        this.cases[12] = (ImageButton) findViewById(R.id.case13) ;
-        this.cases[12].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(12);
-            }
-        });
-
-        this.cases[13] = (ImageButton) findViewById(R.id.case14) ;
-        this.cases[13].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(13);
-            }
-        });
-
-        this.cases[14] = (ImageButton) findViewById(R.id.case15) ;
-        this.cases[14].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(14);
-            }
-        });
-
-        this.cases[15] = (ImageButton) findViewById(R.id.case16) ;
-        this.cases[15].setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                choixCase(15);
-            }
-        });
+        int[] idCase = new int[16];
+        idCase[0] = R.id.case1;
+        idCase[1] = R.id.case2;
+        idCase[2] = R.id.case3;
+        idCase[3] = R.id.case4;
+        idCase[4] = R.id.case5;
+        idCase[5] = R.id.case6;
+        idCase[6] = R.id.case7;
+        idCase[7] = R.id.case8;
+        idCase[8] = R.id.case9;
+        idCase[9] = R.id.case10;
+        idCase[10] = R.id.case11;
+        idCase[11] = R.id.case12;
+        idCase[12] = R.id.case13;
+        idCase[13] = R.id.case14;
+        idCase[14] = R.id.case15;
+        idCase[15] = R.id.case16;
 
         // Pions
-        this.pions[0] = (ImageButton) findViewById(R.id.pion1);
-        this.pions[0].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(0);
-            }
-        });
+        idPion = new int[16];
+        idPion[0] = R.id.pion1;
+        idPion[1] = R.id.pion2;
+        idPion[2] = R.id.pion3;
+        idPion[3] = R.id.pion4;
+        idPion[4] = R.id.pion5;
+        idPion[5] = R.id.pion6;
+        idPion[6] = R.id.pion7;
+        idPion[7] = R.id.pion8;
+        idPion[8] = R.id.pion9;
+        idPion[9] = R.id.pion10;
+        idPion[10] = R.id.pion11;
+        idPion[11] = R.id.pion12;
+        idPion[12] = R.id.pion13;
+        idPion[13] = R.id.pion14;
+        idPion[14] = R.id.pion15;
+        idPion[15] = R.id.pion16;
 
-        this.pions[1] = (ImageButton) findViewById(R.id.pion2);
-        this.pions[1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(1);
-            }
-        });
+        // Set Listener pour case et pions
+        for(int i=0; i< idCase.length; i++){
+            final int j = i;
+            this.cases[i] = (ImageButton) findViewById(idCase[i]) ;
+            this.cases[i].setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    choixCase(j);
+                }
+            });
 
-        this.pions[2] = (ImageButton) findViewById(R.id.pion3);
-        this.pions[2].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(2);
-            }
-        });
-
-        this.pions[3] = (ImageButton) findViewById(R.id.pion4);
-        this.pions[3].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(3);
-            }
-        });
-
-        this.pions[4] = (ImageButton) findViewById(R.id.pion5);
-        this.pions[4].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(4);
-            }
-        });
-
-        this.pions[5] = (ImageButton) findViewById(R.id.pion6);
-        this.pions[5].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(5);
-            }
-        });
-
-        this.pions[6] = (ImageButton) findViewById(R.id.pion7);
-        this.pions[6].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(6);
-            }
-        });
-
-        this.pions[7] = (ImageButton) findViewById(R.id.pion8);
-        this.pions[7].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(7);
-            }
-        });
-
-        this.pions[8] = (ImageButton) findViewById(R.id.pion9);
-        this.pions[8].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(8);
-            }
-        });
-
-        this.pions[9]= (ImageButton) findViewById(R.id.pion10);
-        this.pions[9].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(9);
-            }
-        });
-
-        this.pions[10] = (ImageButton) findViewById(R.id.pion11);
-        this.pions[10].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(10);
-            }
-        });
-
-        this.pions[11] = (ImageButton) findViewById(R.id.pion12);
-        this.pions[11].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(11);
-            }
-        });
-
-        this.pions[12] = (ImageButton) findViewById(R.id.pion13);
-        this.pions[12].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(12);
-            }
-        });
-
-        this.pions[13] = (ImageButton) findViewById(R.id.pion14);
-        this.pions[13].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(13);
-            }
-        });
-
-        this.pions[14] = (ImageButton) findViewById(R.id.pion15);
-        this.pions[14].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(14);
-            }
-        });
-
-        this.pions[15] = (ImageButton) findViewById(R.id.pion16);
-        this.pions[15].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixPion(15);
-            }
-        });
+            this.pions[i] = (ImageButton) findViewById(idPion[i]);
+            this.pions[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    choixPion(j);
+                }
+            });
+        }
 
     }
 
     public void boucleJeu() {
 
         QuartoGrille quarto = new QuartoGrille();
-/*
+
         ArrayList<String> gagne = quarto.gagne();
         while(gagne.isEmpty()){
             // ------ Choix du pion et de la case
@@ -316,9 +129,9 @@ public class Quarto extends AppCompatActivity {
             this.joueur = !this.joueur;
             this.cases = this.choixCase(quarto);
 
-            quarto.setPionRestantI(this.pion, false); // effacement du pion dans this.pionRestant[]
-            quarto.modifCase(quarto.getPion(this.pion-1), this.cases); // inscription dans la QuartoGrille.case[indiceC]
-            quarto.setNulli(pion-1); // effacement du pion dans la grille
+            quarto.setPionRestantI(this.pionChoisit, false); // effacement du pion dans this.pionRestant[]
+            quarto.modifCase(quarto.getPion(this.pionChoisit-1), this.caseChoisie); // inscription dans la QuartoGrille.case[indiceC]
+            quarto.setNulli(pionChoisit-1); // effacement du pion dans la grille
             gagne = quarto.gagne(); // vérification si un joueur a gagné
 
             if(!gagne.isEmpty()){
@@ -338,13 +151,8 @@ public class Quarto extends AppCompatActivity {
                     str.append(QuartoGrille.getListeComb(j+3));
                     str.append("]\n");
                 }
-                System.out.println("[0 ][1 ][2 ][3 ]\n[4 ][5 ][6 ][7 ]\n[8 ][9 ][10][11]\n[12][13][15][16]\n");
-                System.out.println(str);
             }
-            System.out.println("------------------------------------------------------------------------------------------------------");
-            System.out.println("------------------------------------------------------------------------------------------------------");
-            System.out.print(quarto.construction());
-        }*/
+        }
     }
 
     private boolean choixJoueur(){
@@ -354,17 +162,38 @@ public class Quarto extends AppCompatActivity {
         else return false;
     }
 
-    private void choixPion (int pion){
+    private void choixPion (int pionChoisit){
         if(this.pionChoisit == -1) {
-            this.pionChoisit = pion;
             this.caseChoisie = -1;
+            this.pionChoisit = pionChoisit;
+            changementJoueur();
         }
     }
 
     private void choixCase (int caseChoisie){
         if(this.caseChoisie == -1) {
+            ImageButton pion = (ImageButton) findViewById(idPion[this.pionChoisit]);
+            pion.setImageResource(R.id);
+            this.pions[this.pionChoisit].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    choixPion(-2);
+                }
+            });
+
             this.pionChoisit = -1;
             this.caseChoisie = caseChoisie;
+            if(!this.quarto.gagne().isEmpty()){
+                // Start new activity partie finie
+            }
+            changementJoueur();
         }
+    }
+
+    private void changementJoueur(){
+        TextView displayPlayer = (TextView) findViewById(R.id.textPlayerName);
+        if(this.joueur) displayPlayer.setText(this.joueur1);
+        else displayPlayer.setText(this.joueur2);
+        this.joueur = !this.joueur;
     }
 }
