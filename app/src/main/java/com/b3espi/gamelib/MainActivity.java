@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.b3espi.gamelib.demineur.DemineurPlay;
-import com.b3espi.gamelib.demineur.DemineurStats;
 import com.b3espi.gamelib.pendu.JeuPendu;
 import com.b3espi.gamelib.pendu.Pendu;
 import com.b3espi.gamelib.puissance4.Puissance4Play;
