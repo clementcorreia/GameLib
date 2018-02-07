@@ -140,46 +140,6 @@ public class Quarto extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
-=======
-    public void boucleJeu() {
-        /*
-        QuartoGrille quarto = new QuartoGrille();
-
-        ArrayList<String> gagne = quarto.gagne();
-        while(gagne.isEmpty()){
-            // ------ Choix du pion et de la case
-            this.pion = this.choixPion(quarto);
-            this.joueur = !this.joueur;
-            this.cases = this.choixCase(quarto);
-
-            quarto.setPionRestantI(this.pionChoisit, false); // effacement du pion dans this.pionRestant[]
-            quarto.modifCase(quarto.getPion(this.pionChoisit-1), this.caseChoisie); // inscription dans la QuartoGrille.case[indiceC]
-            quarto.setNulli(pionChoisit-1); // effacement du pion dans la grille
-            gagne = quarto.gagne(); // vérification si un joueur a gagné
-
-            if(!gagne.isEmpty()){
-                System.out.println("Bravo, vous avez gagné ! Les caractéristiques qui gagnent sont les suivantes :");
-                StringBuilder str = new StringBuilder();
-
-                while(!gagne.isEmpty()){
-                    str.append(gagne.remove(0));
-                    str.append(" : ligne [");
-                    int j = Integer.parseInt(gagne.remove(0)); // On dépile le premier indice de la ligne gagnante
-                    str.append(QuartoGrille.getListeComb(j));
-                    str.append(", ");
-                    str.append(QuartoGrille.getListeComb(j+1));
-                    str.append(", ");
-                    str.append(QuartoGrille.getListeComb(j+2));
-                    str.append(", ");
-                    str.append(QuartoGrille.getListeComb(j+3));
-                    str.append("]\n");
-                }
-            }
-        }*/
-    }
-
->>>>>>> a9cc783800b278a0f1964d906639ae070d3fa771
     private boolean choixJoueur(){
         Random rand = new Random();
         int i = rand.nextInt(2);
@@ -191,23 +151,14 @@ public class Quarto extends AppCompatActivity {
         if(this.pionChoisit == -1) {
             this.caseChoisie = -1;
             this.pionChoisit = pionChoisit;
-<<<<<<< HEAD
             changementJoueur(true);
-=======
-            changementJoueur();
-
->>>>>>> a9cc783800b278a0f1964d906639ae070d3fa771
         }
     }
 
     private void choixCase (int caseChoisie){
         if(this.caseChoisie == -1) {
             ImageButton pion = (ImageButton) findViewById(idPion[this.pionChoisit]);
-<<<<<<< HEAD
             pion.setImageResource(R.drawable.case_quarto);
-=======
-            pion.setImageResource(R.drawable.boutonvide);
->>>>>>> a9cc783800b278a0f1964d906639ae070d3fa771
             this.pions[this.pionChoisit].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
