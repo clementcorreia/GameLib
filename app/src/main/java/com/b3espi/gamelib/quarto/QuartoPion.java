@@ -14,16 +14,6 @@ public class QuartoPion {
 		this.interieur = i;
 		this.forme = f;
 	}
-	
-	public String toStringPion(){
-		StringBuilder str = new StringBuilder();
-		str.append(taille);
-		str.append(couleur);
-		str.append(" ");
-		str.append(interieur);
-		str.append(forme);
-		return str.toString();
-	}
 
 	public String getTaille() {
 		return taille;
@@ -39,30 +29,6 @@ public class QuartoPion {
 
 	public String getForme() {
 		return forme;
-	}
-	
-	public void setTaille(String taille) {
-		this.taille = taille;
-	}
-
-	public void setCouleur(String couleur) {
-		this.couleur = couleur;
-	}
-
-	public void setInterieur(String interieur) {
-		this.interieur = interieur;
-	}
-
-	public void setForme(String forme) {
-		this.forme = forme;
-	}
-	
-	public void setNull() {
-		
-		this.taille = " ";
-		this.couleur = " ";
-		this.interieur = " ";
-		this.forme = " ";
 	}
 	
 	public boolean memeTaille(QuartoPion a, QuartoPion b, QuartoPion c){

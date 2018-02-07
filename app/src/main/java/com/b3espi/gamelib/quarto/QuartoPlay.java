@@ -20,6 +20,9 @@ public class QuartoPlay extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quarto_play);
 
+        TextView regle = (TextView) findViewById(R.id.reglesQuarto);
+        regle.setText("Règles :\nLa liste du bas vous donne la liste des pions disponibles.\nChaque pion est caractérisé par 4 caractéristiques :\n- Contour noir ou Sans contour\n- Blanc ou Marron\n- Creux ou Plein\n- Rond ou Carré\n\nLe but est de former un ligne ou colonne ou diagonale de quatre pions respectants un de ces critères en commun.\nATTENTION : C'est l'adversaire qui choisit le pion que vous allez placer.");
+
         final TextView joueur1 = (EditText) findViewById(R.id.nomJoueur1);
         final TextView joueur2 = (EditText) findViewById(R.id.nomJoueur2);
 

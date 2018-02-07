@@ -5,12 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.b3espi.gamelib.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,6 +15,9 @@ public class Quarto extends AppCompatActivity {
 
     private ImageButton[] pions;
     private int[] idPion;
+    private int[] idCase;
+    private int[] idPionDraw;
+
 
     private ImageButton[] cases;
 
@@ -31,7 +30,10 @@ public class Quarto extends AppCompatActivity {
 
     private QuartoGrille quarto;
 
-    final private static int taille = 16;
+    public final static String GAGNANT = "com.b3espi.gamelib.quarto.GAGNANT";
+    public final static String COMBINAISONS = "com.b3espi.gamelib.quarto.COMBINAISONS";
+
+    private final static int taille = 16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +61,7 @@ public class Quarto extends AppCompatActivity {
         this.cases = new ImageButton[taille];
 
         // Grille
-        int[] idCase = new int[16];
+        this.idCase = new int[16];
         idCase[0] = R.id.case1;
         idCase[1] = R.id.case2;
         idCase[2] = R.id.case3;
@@ -96,6 +98,26 @@ public class Quarto extends AppCompatActivity {
         idPion[14] = R.id.pion15;
         idPion[15] = R.id.pion16;
 
+
+        // Pions
+        idPionDraw = new int[16];
+        idPionDraw[0] = R.drawable.ligne_blanc_creux_carre;
+        idPionDraw[1] = R.drawable.ligne_blanc_creux_rond;
+        idPionDraw[2] = R.drawable.ligne_blanc_plein_carre;
+        idPionDraw[3] = R.drawable.ligne_blanc_plein_rond;
+        idPionDraw[4] = R.drawable.ligne_marron_creux_carre;
+        idPionDraw[5] = R.drawable.ligne_marron_creux_rond;
+        idPionDraw[6] = R.drawable.ligne_marron_plein_carre;
+        idPionDraw[7] = R.drawable.ligne_marron_plein_rond;
+        idPionDraw[8] = R.drawable.simple_blanc_creux_carre;
+        idPionDraw[9] = R.drawable.simple_blanc_creux_rond;
+        idPionDraw[10] = R.drawable.simple_blanc_plein_carre;
+        idPionDraw[11] = R.drawable.simple_blanc_plein_rond;
+        idPionDraw[12] = R.drawable.simple_marron_creux_carre;
+        idPionDraw[13] = R.drawable.simple_marron_creux_rond;
+        idPionDraw[14] = R.drawable.simple_marron_plein_carre;
+        idPionDraw[15] = R.drawable.simple_marron_plein_rond;
+
         // Set Listener pour case et pions
         for(int i=0; i< idCase.length; i++){
             final int j = i;
@@ -118,43 +140,6 @@ public class Quarto extends AppCompatActivity {
 
     }
 
-    /*public void boucleJeu() {
-
-        QuartoGrille quarto = new QuartoGrille();
-
-        ArrayList<String> gagne = quarto.gagne();
-        while(gagne.isEmpty()){
-            // ------ Choix du pion et de la case
-            this.pion = this.choixPion(quarto);
-            this.joueur = !this.joueur;
-            this.cases = this.choixCase(quarto);
-
-            quarto.setPionRestantI(this.pionChoisit, false); // effacement du pion dans this.pionRestant[]
-            quarto.modifCase(quarto.getPion(this.pionChoisit-1), this.caseChoisie); // inscription dans la QuartoGrille.case[indiceC]
-            quarto.setNulli(pionChoisit-1); // effacement du pion dans la grille
-            gagne = quarto.gagne(); // vérification si un joueur a gagné
-
-            if(!gagne.isEmpty()){
-                System.out.println("Bravo, vous avez gagné ! Les caractéristiques qui gagnent sont les suivantes :");
-                StringBuilder str = new StringBuilder();
-
-                while(!gagne.isEmpty()){
-                    str.append(gagne.remove(0));
-                    str.append(" : ligne [");
-                    int j = Integer.parseInt(gagne.remove(0)); // On dépile le premier indice de la ligne gagnante
-                    str.append(QuartoGrille.getListeComb(j));
-                    str.append(", ");
-                    str.append(QuartoGrille.getListeComb(j+1));
-                    str.append(", ");
-                    str.append(QuartoGrille.getListeComb(j+2));
-                    str.append(", ");
-                    str.append(QuartoGrille.getListeComb(j+3));
-                    str.append("]\n");
-                }
-            }
-        }
-    }*/
-
     private boolean choixJoueur(){
         Random rand = new Random();
         int i = rand.nextInt(2);
@@ -166,14 +151,14 @@ public class Quarto extends AppCompatActivity {
         if(this.pionChoisit == -1) {
             this.caseChoisie = -1;
             this.pionChoisit = pionChoisit;
-            changementJoueur();
+            changementJoueur(true);
         }
     }
 
     private void choixCase (int caseChoisie){
         if(this.caseChoisie == -1) {
             ImageButton pion = (ImageButton) findViewById(idPion[this.pionChoisit]);
-            //pion.setImageResource(R.id);
+            pion.setImageResource(R.drawable.case_quarto);
             this.pions[this.pionChoisit].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -181,19 +166,37 @@ public class Quarto extends AppCompatActivity {
                 }
             });
 
+            // inscription dans la QuartoGrille.case[caseChoisie]
+            this.quarto.modifCase(this.pionChoisit, caseChoisie);
+
+            ImageButton caseQuarto = (ImageButton) findViewById(idCase[caseChoisie]);
+            caseQuarto.setImageResource(this.idPionDraw[this.pionChoisit]);
+
             this.pionChoisit = -1;
             this.caseChoisie = caseChoisie;
-            if(!this.quarto.gagne().isEmpty()){
-                // Start new activity partie finie
+
+            ArrayList<String> combinaisonGagnante = this.quarto.gagne();
+            if(!combinaisonGagnante.isEmpty()){
+                Intent intent = new Intent(Quarto.this, QuartoGagne.class);
+
+                String nomGagnant;
+                if (this.joueur) nomGagnant = this.joueur2;
+                else  nomGagnant = this.joueur1;
+
+                intent.putExtra(Quarto.GAGNANT, nomGagnant);
+                intent.putStringArrayListExtra(Quarto.COMBINAISONS, combinaisonGagnante);
+                startActivity(intent);
             }
-            changementJoueur();
+            changementJoueur(false);
         }
     }
 
-    private void changementJoueur(){
-        TextView displayPlayer = (TextView) findViewById(R.id.textPlayerName);
-        if(this.joueur) displayPlayer.setText(this.joueur1);
-        else displayPlayer.setText(this.joueur2);
-        this.joueur = !this.joueur;
+    private void changementJoueur(boolean changement){
+        if(changement) {
+            TextView displayPlayer = (TextView) findViewById(R.id.textPlayerName);
+            if (this.joueur) displayPlayer.setText(this.joueur1);
+            else displayPlayer.setText(this.joueur2);
+            this.joueur = !this.joueur;
+        }
     }
 }

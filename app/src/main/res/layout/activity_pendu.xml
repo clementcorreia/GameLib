@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.b3espi.gamelib.quarto.QuartoPlay">
+    tools:context="com.b3espi.gamelib.pendu.Pendu">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,8 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
-        android:weightSum="2">
+        android:weightSum="2"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,10 +23,11 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/reglesQuarto"
+                android:id="@+id/textWhichPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
+                android:text="@string/regleQuarto"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                 android:textSize="14sp" />
@@ -37,27 +39,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:weightSum="3">
+            android:weightSum="1">
 
-            <EditText
-                android:id="@+id/nomJoueur1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:hint="Nom Joueur 1"
-                android:layout_weight="1"/>
-
-            <EditText
-                android:id="@+id/nomJoueur2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/nomJoueur1"
-                android:hint="Nom Joueur 2"
-                android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/jouerQuarto"
+                android:id="@+id/jouerPendu"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/nomJoueur2"

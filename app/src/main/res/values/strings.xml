@@ -4,8 +4,8 @@
     <string name="game_desc_sudoku">Résolutions de grilles 9x9</string>
     <string name="game_name_demineur">Démineur</string>
     <string name="game_desc_demineur">Déminez jusqu\'à 25 bombes sur une grille 10x10 !</string>
-    <string name="game_name_quizz">Quizz</string>
-    <string name="game_desc_quizz">Thème : Culture générale</string>
+    <string name="game_name_morpion">Morpion</string>
+    <string name="game_desc_morpion">Venez jouer au célèbre jeu du morpion</string>
     <string name="game_name_puissance4">Puissance 4</string>
     <string name="game_desc_puissance4">Défiez vos amis au jeu du Puissance 4</string>
     <string name="game_name_quarto">Quarto</string>
@@ -15,7 +15,7 @@
     <string name="imageButton_contentDesc_puissance4">Pion</string>
     <string name="button_retry_puissance4">Rejouer</string>
     <string name="button_lib_play">Jouer</string>
-    <string name="button_lib_stats">Stats</string>
+    <string name="button_lib_stats">Règles</string>
     <string name="accueil_bienvenue">Bienvenue sur notre sélection de jeux</string>
     <string name="title_activity_quarto">Quarto</string>
     <string name="regleQuarto">Règles :\nLa liste du bas vous donne la liste des pions disponibles.\nChaque pion est caractérisé par 4 caractéristiques :\n- Contour noir ou Sans contour\n- Blanc ou Marron\n- Creux ou Plein\n- Rond ou Carré\n\nLe plateau est constitué de 4x4 cases.\nLe but est de former un ligne ou colonne ou diagonale de quatre pions respectants un de ces critères en commun.\nATTENTION : C'est l'adversaire qui choisit le pion que vous allez placer.\n\n\n</string>
@@ -26,4 +26,12 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_quarto_play">QuartoPlay</string>
+    <string name="title_activity_pendu">Pendu</string>
+    <string name="game_desc_pendu">Venez défier le dictionnaire du pendu</string>
+    <string name="title_activity_pendu_play">PenduPlay</string>
+    <string name="game_egalite_puissance4">Egalité</string>
+    <string name="game_gagnant_puissance4">Gagnant :</string>
+    <string name="title_activity_regle_morpion">regleMorpion</string>
+    <string name="regleMorpion">Règles : \nPlacez vos pions l\'un après l\'autre \nLe premier qui aligne 3 pions identiques remporte la partie \n\nBonne chance \n\n</string>
+    <string name="title_activity_morpion_game">activity_morpion_game</string>
 </resources>

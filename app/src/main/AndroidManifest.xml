@@ -22,6 +22,8 @@
         <activity android:name=".puissance4.Puissance4Stats" />
         <activity android:name=".quarto.Quarto" />
         <activity android:name=".quarto.QuartoPlay"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_pendu" android:name=".pendu.Pendu"/>
+        <activity android:theme="@style/AppTheme.NoActionBar" android:label="@string/title_activity_pendu_play" android:name=".PenduPlay"/>
     </application>
 
 </manifest>

@@ -20,8 +20,8 @@ public class Puissance4Play extends AppCompatActivity {
     private ImageButton[][] grille;
     private int[][] grilleValue;
     private String currentPlayer;
-    private LinearLayout gagnant, indication;
-    private ImageButton boutonGagnant;
+    private LinearLayout gagnant, indication, gagnantR, gagnantJ, egalite;
+    private ImageButton boutonGagnantR, boutonGagnantJ;
     private Button retryButton;
     private static int cpt = 0;
 
@@ -98,11 +98,15 @@ public class Puissance4Play extends AppCompatActivity {
         }
 
         this.gagnant = (LinearLayout) findViewById(R.id.indicationGagnant);
-        this.indication = (LinearLayout) findViewById(R.id.indication);
+        this.gagnantR = (LinearLayout) findViewById(R.id.indicationGagnantR);
+        this.gagnantJ = (LinearLayout) findViewById(R.id.indicationGagnantJ);
+        this.egalite = (LinearLayout) findViewById(R.id.indicationEgalite);
+        this.indication = (LinearLayout) findViewById(R.id.indicationPartie);
 
         this.gagnant.setVisibility(LinearLayout.GONE);
 
-        this.boutonGagnant = (ImageButton) findViewById(R.id.caseGagnant);
+        this.boutonGagnantR = (ImageButton) findViewById(R.id.caseGagnantR);
+        this.boutonGagnantJ = (ImageButton) findViewById(R.id.caseGagnantJ);
     }
 
     public void fin() {
@@ -112,7 +116,20 @@ public class Puissance4Play extends AppCompatActivity {
             }
         }
     }
-    
+
+    public boolean isTie() {
+        boolean ok = false, abort = false;
+        for(int row=0; row<6 && !abort; row++) {
+            for(int col=0; col<7 && !abort; col++) {
+                abort = (this.grilleValue[row][col] == -1);
+            }
+        }
+        if(!abort) {
+            ok = true;
+        }
+        return ok;
+    }
+
     public void playRouge(int col) {
         boolean trouve = false;
         for(int row=0; row<6 && !trouve; row++) {
@@ -122,11 +139,21 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setImageResource(R.drawable.boutonrouge);
                 this.grilleValue[row][col] = 0;
                 ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
-                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col)) {
-                    playerButton.setImageResource(R.drawable.boutonblanc);
-                    this.boutonGagnant.setImageResource(R.drawable.boutonrouge);
+                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col) || isTie()) {
+                    if(isTie()) {
+                        this.gagnantR.setVisibility(LinearLayout.GONE);
+                        this.gagnantJ.setVisibility(LinearLayout.GONE);
+                        this.egalite.setVisibility(LinearLayout.VISIBLE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
+                    else {
+                        this.gagnantR.setVisibility(LinearLayout.VISIBLE);
+                        this.gagnantJ.setVisibility(LinearLayout.GONE);
+                        this.egalite.setVisibility(LinearLayout.GONE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
                     this.gagnant.setVisibility(LinearLayout.VISIBLE);
-                    this.indication.setVisibility(LinearLayout.GONE);
+                    this.boutonGagnantR.setImageResource(R.drawable.boutonrouge);
                     fin();
                 }
                 else {
@@ -146,11 +173,21 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setImageResource(R.drawable.boutonjaune);
                 this.grilleValue[row][col] = 1;
                 ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
-                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col)) {
-                    playerButton.setImageResource(R.drawable.boutonblanc);
-                    this.boutonGagnant.setImageResource(R.drawable.boutonjaune);
+                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col) || isTie()) {
+                    if(isTie()) {
+                        this.gagnantR.setVisibility(LinearLayout.GONE);
+                        this.gagnantJ.setVisibility(LinearLayout.GONE);
+                        this.egalite.setVisibility(LinearLayout.VISIBLE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
+                    else {
+                        this.gagnantR.setVisibility(LinearLayout.GONE);
+                        this.gagnantJ.setVisibility(LinearLayout.VISIBLE);
+                        this.egalite.setVisibility(LinearLayout.GONE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
                     this.gagnant.setVisibility(LinearLayout.VISIBLE);
-                    this.indication.setVisibility(LinearLayout.GONE);
+                    this.boutonGagnantJ.setImageResource(R.drawable.boutonjaune);
                     fin();
                 }
                 else {
@@ -171,7 +208,7 @@ public class Puissance4Play extends AppCompatActivity {
     }
 
     public boolean isColWin(int row, int col) {
-        int cpt = 1, value = this.grilleValue[row][col];;
+        int cpt = 1, value = this.grilleValue[row][col];
         boolean ok = false, abort = false;
         for(int rowIndex = row-1; (rowIndex>(row-4) && rowIndex >= 0 && !ok && !abort); rowIndex--) {
             if(this.grilleValue[rowIndex][col] == value) {
