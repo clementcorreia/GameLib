@@ -27,28 +27,28 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case1"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case2"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case3"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case4"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -63,28 +63,28 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case5"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case6"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case7"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case8"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -99,28 +99,28 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case9"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case10"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case11"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case12"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -135,28 +135,28 @@
                 android:layout_weight="1"
                 android:weightSum="4">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case13"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case14"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case15"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/case_quarto" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/case16"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -212,28 +212,28 @@
                     android:layout_weight="1"
                     android:weightSum="4">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion1"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_creux_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion2"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_creux_rond" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion3"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_blanc_plein_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion4"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
@@ -248,28 +248,28 @@
                     android:layout_weight="1"
                     android:weightSum="4">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion5"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_creux_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion6"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_creux_rond" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion7"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ligne_marron_plein_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion8"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
@@ -284,28 +284,28 @@
                     android:layout_weight="1"
                     android:weightSum="4">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion9"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_creux_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion10"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_creux_rond" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion11"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_blanc_plein_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion12"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
@@ -320,28 +320,28 @@
                     android:layout_weight="1"
                     android:weightSum="4">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion13"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_creux_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion14"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_creux_rond" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion15"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/simple_marron_plein_carre" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/pion16"
                         android:layout_weight="1"
                         android:layout_width="wrap_content"

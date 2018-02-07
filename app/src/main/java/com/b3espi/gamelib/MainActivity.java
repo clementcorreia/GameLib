@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import com.b3espi.gamelib.demineur.DemineurPlay;
 import com.b3espi.gamelib.demineur.DemineurStats;
+import com.b3espi.gamelib.pendu.JeuPendu;
+import com.b3espi.gamelib.pendu.Pendu;
 import com.b3espi.gamelib.puissance4.Puissance4Play;
 import com.b3espi.gamelib.puissance4.Puissance4Stats;
 import com.b3espi.gamelib.quarto.QuartoPlay;
@@ -30,17 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        final Button statsDemineurButton = (Button) findViewById(R.id.stats_demineur);
-        statsDemineurButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DemineurStats.class);
-                startActivity(intent);
-            }
-
-        });
-
         final Button playPuissance4Button = (Button) findViewById(R.id.play_puissance4);
         playPuissance4Button.setOnClickListener(new View.OnClickListener() {
 
@@ -52,16 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        final Button statsPuissance4Button = (Button) findViewById(R.id.stats_puissance4);
-        statsPuissance4Button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Puissance4Stats.class);
-                startActivity(intent);
-            }
-
-        });
         final Button playQuartoButton = (Button) findViewById(R.id.play_quarto);
         playQuartoButton.setOnClickListener(new View.OnClickListener() {
 
@@ -71,16 +52,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+<<<<<<< HEAD
+        final Button playQuartoButton = (Button) findViewById(R.id.play_quarto);
+        playQuartoButton.setOnClickListener(new View.OnClickListener() {
+=======
 
-        /*final Button statsQuartoButton = (Button) findViewById(R.id.stats_quarto);
-        statsPuissance4Button.setOnClickListener(new View.OnClickListener() {
+        final Button playPenduButton = (Button) findViewById(R.id.play_pendu);
+        playPenduButton.setOnClickListener(new View.OnClickListener() {
+>>>>>>> devQuarto
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, QuartoStats.class);
+                Intent intent = new Intent(MainActivity.this, Pendu.class);
                 startActivity(intent);
             }
+        });
 
-        });*/
+        final Button playMorpionButton = (Button) findViewById(R.id.play_morpion);
+        playMorpionButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Pendu.class);
+                startActivity(intent);
+            }
+        });
     }
 }

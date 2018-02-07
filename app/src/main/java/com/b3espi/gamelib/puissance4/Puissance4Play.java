@@ -20,9 +20,16 @@ public class Puissance4Play extends AppCompatActivity {
     private ImageButton[][] grille;
     private int[][] grilleValue;
     private String currentPlayer;
+<<<<<<< HEAD
     private LinearLayout gagnant, indication;
     private ImageButton boutonGagnant;
     private Button retryButton;
+=======
+    private LinearLayout gagnant, indication, gagnantR, gagnantJ, egalite;
+    private ImageButton boutonGagnantR, boutonGagnantJ;
+    private Button retryButton;
+    private static int cpt = 0;
+>>>>>>> devQuarto
 
     public void initialise() {
         System.out.println("Initialise");
@@ -87,7 +94,11 @@ public class Puissance4Play extends AppCompatActivity {
         }
 
         ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
+<<<<<<< HEAD
         if(this.currentPlayer == "jaune") {
+=======
+        if(Puissance4Play.cpt%2 == 0) {
+>>>>>>> devQuarto
             this.currentPlayer = "rouge";
             playerButton.setImageResource(R.drawable.boutonrouge);
         }
@@ -97,11 +108,23 @@ public class Puissance4Play extends AppCompatActivity {
         }
 
         this.gagnant = (LinearLayout) findViewById(R.id.indicationGagnant);
+<<<<<<< HEAD
         this.indication = (LinearLayout) findViewById(R.id.indication);
 
         this.gagnant.setVisibility(LinearLayout.GONE);
 
         this.boutonGagnant = (ImageButton) findViewById(R.id.caseGagnant);
+=======
+        this.gagnantR = (LinearLayout) findViewById(R.id.indicationGagnantR);
+        this.gagnantJ = (LinearLayout) findViewById(R.id.indicationGagnantJ);
+        this.egalite = (LinearLayout) findViewById(R.id.indicationEgalite);
+        this.indication = (LinearLayout) findViewById(R.id.indicationPartie);
+
+        this.gagnant.setVisibility(LinearLayout.GONE);
+
+        this.boutonGagnantR = (ImageButton) findViewById(R.id.caseGagnantR);
+        this.boutonGagnantJ = (ImageButton) findViewById(R.id.caseGagnantJ);
+>>>>>>> devQuarto
     }
 
     public void fin() {
@@ -110,6 +133,22 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setClickable(false);
             }
         }
+<<<<<<< HEAD
+=======
+    }
+
+    public boolean isTie() {
+        boolean ok = false, abort = false;
+        for(int row=0; row<6 && !abort; row++) {
+            for(int col=0; col<7 && !abort; col++) {
+                abort = (this.grilleValue[row][col] == -1);
+            }
+        }
+        if(!abort) {
+            ok = true;
+        }
+        return ok;
+>>>>>>> devQuarto
     }
 
     public void playRouge(int col) {
@@ -121,11 +160,29 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setImageResource(R.drawable.boutonrouge);
                 this.grilleValue[row][col] = 0;
                 ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
+<<<<<<< HEAD
                 if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col)) {
                     playerButton.setImageResource(R.drawable.boutonblanc);
                     this.boutonGagnant.setImageResource(R.drawable.boutonrouge);
                     this.gagnant.setVisibility(LinearLayout.VISIBLE);
                     this.indication.setVisibility(LinearLayout.GONE);
+=======
+                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col) || isTie()) {
+                    if(isTie()) {
+                        this.gagnantR.setVisibility(LinearLayout.GONE);
+                        this.gagnantJ.setVisibility(LinearLayout.GONE);
+                        this.egalite.setVisibility(LinearLayout.VISIBLE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
+                    else {
+                        this.gagnantR.setVisibility(LinearLayout.VISIBLE);
+                        this.gagnantJ.setVisibility(LinearLayout.GONE);
+                        this.egalite.setVisibility(LinearLayout.GONE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
+                    this.gagnant.setVisibility(LinearLayout.VISIBLE);
+                    this.boutonGagnantR.setImageResource(R.drawable.boutonrouge);
+>>>>>>> devQuarto
                     fin();
                 }
                 else {
@@ -145,11 +202,29 @@ public class Puissance4Play extends AppCompatActivity {
                 this.grille[row][col].setImageResource(R.drawable.boutonjaune);
                 this.grilleValue[row][col] = 1;
                 ImageButton playerButton = (ImageButton) findViewById(R.id.casePlayer);
+<<<<<<< HEAD
                 if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col)) {
                     playerButton.setImageResource(R.drawable.boutonblanc);
                     this.boutonGagnant.setImageResource(R.drawable.boutonjaune);
                     this.gagnant.setVisibility(LinearLayout.VISIBLE);
                     this.indication.setVisibility(LinearLayout.GONE);
+=======
+                if(isColWin(row,col) || isRowWin(row,col) || isDiagonaleCroissanteWin(row,col) || isDiagonaleDecroissanteWin(row,col) || isTie()) {
+                    if(isTie()) {
+                        this.gagnantR.setVisibility(LinearLayout.GONE);
+                        this.gagnantJ.setVisibility(LinearLayout.GONE);
+                        this.egalite.setVisibility(LinearLayout.VISIBLE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
+                    else {
+                        this.gagnantR.setVisibility(LinearLayout.GONE);
+                        this.gagnantJ.setVisibility(LinearLayout.VISIBLE);
+                        this.egalite.setVisibility(LinearLayout.GONE);
+                        this.indication.setVisibility(LinearLayout.GONE);
+                    }
+                    this.gagnant.setVisibility(LinearLayout.VISIBLE);
+                    this.boutonGagnantJ.setImageResource(R.drawable.boutonjaune);
+>>>>>>> devQuarto
                     fin();
                 }
                 else {
@@ -170,7 +245,11 @@ public class Puissance4Play extends AppCompatActivity {
     }
 
     public boolean isColWin(int row, int col) {
+<<<<<<< HEAD
         int cpt = 1, value = this.grilleValue[row][col];;
+=======
+        int cpt = 1, value = this.grilleValue[row][col];
+>>>>>>> devQuarto
         boolean ok = false, abort = false;
         for(int rowIndex = row-1; (rowIndex>(row-4) && rowIndex >= 0 && !ok && !abort); rowIndex--) {
             if(this.grilleValue[rowIndex][col] == value) {
@@ -287,6 +366,10 @@ public class Puissance4Play extends AppCompatActivity {
         this.retryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
+=======
+                Puissance4Play.cpt++;
+>>>>>>> devQuarto
                 finish();
                 //Intent intent = new Intent(Puissance4Play.this, Puissance4Play.class);
                 startActivity(getIntent());

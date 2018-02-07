@@ -663,7 +663,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+<<<<<<< HEAD
             <LinearLayout
+=======
+            <!--<LinearLayout
+>>>>>>> devQuarto
                 android:id="@+id/indication"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -688,10 +692,17 @@
                     android:scaleType="centerInside"
                     app:srcCompat="@drawable/boutonblanc" />
 
+<<<<<<< HEAD
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/indicationGagnant"
+=======
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/indicationPartie"
+>>>>>>> devQuarto
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -699,18 +710,31 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
+<<<<<<< HEAD
                     android:layout_height="match_parent"
+=======
+                    android:layout_height="wrap_content"
+>>>>>>> devQuarto
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textWhichPlayer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+<<<<<<< HEAD
                         android:text="@string/textViewWin"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
                     <ImageButton
                         android:id="@+id/caseGagnant"
+=======
+                        android:text="@string/textViewWhichPlayer"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        tools:ignore="DuplicateIds" />
+
+                    <ImageButton
+                        android:id="@+id/casePlayer"
+>>>>>>> devQuarto
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_margin="1dp"
@@ -720,11 +744,126 @@
                         android:contentDescription="@string/imageButton_contentDesc_puissance4"
                         android:scaleType="centerInside"
                         app:srcCompat="@drawable/boutonblanc" />
+<<<<<<< HEAD
+=======
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/indicationGagnant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteY="0dp">
+
+
+                <LinearLayout
+                    android:id="@+id/indicationEgalite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textTie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_egalite_puissance4"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        tools:ignore="DuplicateIds" />
+
+                    <ImageButton
+                        android:id="@+id/caseEgaliteJ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/imageButton_contentDesc_puissance4"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/boutonjaune" />
+
+                    <ImageButton
+                        android:id="@+id/caseEgaliteR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/imageButton_contentDesc_puissance4"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/boutonrouge" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/indicationGagnantR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textGagnantR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_gagnant_puissance4"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        tools:ignore="DuplicateIds" />
+
+                    <ImageButton
+                        android:id="@+id/caseGagnantR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/imageButton_contentDesc_puissance4"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/boutonrouge" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/indicationGagnantJ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textGagnantJ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_gagnant_puissance4"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                        tools:ignore="DuplicateIds" />
+
+                    <ImageButton
+                        android:id="@+id/caseGagnantJ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/imageButton_contentDesc_puissance4"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/boutonjaune" />
+
+>>>>>>> devQuarto
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/buttonRetryPuissance4"
+<<<<<<< HEAD
                     style="@android:style/Widget.Material.Button.Colored"
+=======
+>>>>>>> devQuarto
                     android:layout_width="179dp"
                     android:layout_height="66dp"
                     android:layout_gravity="center_horizontal"
